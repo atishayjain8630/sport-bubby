@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Buddy - Admin Panel</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h2>Admin Dashboard</h2>
+  <h3>Add/Update Sports Category</h3>
+  <form id="sportsCategoryForm">
+    <input type="text" id="sportCategory" placeholder="New Sport Category" required />
+    <button type="submit">Save Sport</button>
+  </form>
+  <h3>Add/Update City</h3>
+  <form id="cityForm">
+    <input type="text" id="cityName" placeholder="City Name" required />
+    <button type="submit">Save City</button>
+  </form>
+  <h3>Add/Update Area</h3>
+  <form id="areaForm">
+    <input type="text" id="areaName" placeholder="Area Name" required />
+    <button type="submit">Save Area</button>
+  </form>
+  <script type="module">
+    import { saveSport, saveCity, saveArea } from './js/admin.js';
+    document.getElementById('sportsCategoryForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      saveSport(sportCategory.value);
+    });
+    document.getElementById('cityForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      saveCity(cityName.value);
+    });
+    document.getElementById('areaForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      saveArea(areaName.value);
+    });
+  </script>
+</body>
+</html>

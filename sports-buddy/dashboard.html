@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Buddy - Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h2>User Dashboard - Add Event</h2>
+  <form id="eventForm">
+    <input type="text" id="sportName" placeholder="Sport Name" required />
+    <input type="text" id="location" placeholder="Location" required />
+    <input type="datetime-local" id="eventTime" required />
+    <button type="submit">Add Event</button>
+  </form>
+  <script type="module">
+    import { addEvent } from './js/dashboard.js';
+    document.getElementById('eventForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const eventData = {
+        sport: sportName.value,
+        location: location.value,
+        time: eventTime.value
+      };
+      addEvent(eventData);
+    });
+  </script>
+</body>
+</html>
